@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "85cb7c03-3fad-45e3-964b-06f7407336e0",
+		"name": "KeyCloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4226669"
+	},
+	"item": [
+		{
+			"name": "TokenUser",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "springboot-keycloak-demo-client",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "app_user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "app_user",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/SpringBootDemoKeyCloak/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"SpringBootDemoKeyCloak",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TokenAdmin",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "springboot-keycloak-demo-client",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "app_admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "app_admin",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/SpringBootDemoKeyCloak/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"SpringBootDemoKeyCloak",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJPX0M3M3BFUnhiYno3VzgwbVZKMmxpTnVaSWxBNkljRmhwaVR3dWhfVExvIn0.eyJleHAiOjE3MDg4NDY0MTcsImlhdCI6MTcwODg0NjExNywianRpIjoiODQyOTRjMWEtMDQ3MS00YWYyLWI4YjctYmNmM2E5NjQ1NjM1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9TcHJpbmdCb290RGVtb0tleUNsb2FrIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjE1NjE2YjFjLTRmNzQtNGIzZC05MjBiLWJiOGEwYWVlNjdiNCIsInR5cCI6IkJlYXJlciIsImF6cCI6InNwcmluZ2Jvb3Qta2V5Y2xvYWstZGVtby1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiN2NkOGZlMDktYjM1Ni00N2Q4LWJjZTctYTg4N2EyMWNhNzI0IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJyZWFsbV91c2VyIiwiZGVmYXVsdC1yb2xlcy1zcHJpbmdib290ZGVtb2tleWNsb2FrIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InNwcmluZ2Jvb3Qta2V5Y2xvYWstZGVtby1jbGllbnQiOnsicm9sZXMiOlsidXNlciJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiN2NkOGZlMDktYjM1Ni00N2Q4LWJjZTctYTg4N2EyMWNhNzI0IiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6ImFwcF91c2VyIiwiZW1haWwiOiJhcHBfdXNlckBrZXljbG9hay5jb20ifQ.pxi1_onC6xBY9Ez-iGojAPaZ_VL66JeqJBPBu7fP4Q5nmuVi2pvHiWG9SpNkqOMm118gBeJqBjKYPnhf1XeBJPSJaKUnGjkOuTec4jYswVQixRrgceKsviNOHdmMtMgPQkQeSJJXQqPN-I081kVEm8nwuiO11_GYtI8oEhThKAn_xkFGyCJTfCGO-NHoYjtfn92Q4hi9RGb05S4YXrk3W_TVeyAyfU536e_S4u5i-T1FaZfJhxibbyEj7oIduOMbLfVfKtLvlbcQazMH73Z-i0rFugzavDQfaNM6kQcNKsiorlHkouXgyChwPRTHQjR05UKRLcJRCF-hAGUF3cSBUA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
