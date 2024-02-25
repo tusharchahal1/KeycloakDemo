@@ -1,0 +1,26 @@
+package com.keycloak.demo.configuration;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ConfigurationProperties(prefix = "jwt.auth.converter")
+public class KeycloakConfiguration {
+	private String resourceId;
+	private String principleAttribute;
+	
+	
+	public String getResourceId() {
+		return resourceId;
+	}
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+	}
+	public String getPrincipleAttribute() {
+		return principleAttribute;
+	}
+	public void setPrincipleAttribute(String principleAttribute) {
+		this.principleAttribute = principleAttribute;
+	}	
+
+}
